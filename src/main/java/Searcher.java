@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Searcher {
-    public static void findoffenestName(List<String> names) {
+    public static void findFriquentName(List<String> names) {
         Map<String, Integer> entryOfNames = new HashMap<>();
         for (String name : names) {
 
@@ -10,27 +10,22 @@ public class Searcher {
             } else {
                 entryOfNames.put(name, 1);
             }
-
         }
-        int maxEntry = 0;
+        int maxEntriesCount = 0;
 
+        for (Integer entriesCount : entryOfNames.values()) {
 
-        for (Map.Entry<String, Integer> value : entryOfNames.entrySet()) {
-
-            if (maxEntry < value.getValue()) {
-                maxEntry = value.getValue();
-
+            if (maxEntriesCount < entriesCount) {
+                maxEntriesCount = entriesCount;
             }
         }
-        for (Map.Entry<String, Integer> value : entryOfNames.entrySet()) {
-            Set<String> frequentNames = entryOfNames.keySet();
+        Set<String> frequentNames = entryOfNames.keySet();
 
-            for (String name : frequentNames) {
+        for (String name : frequentNames) {
 
-                if (entryOfNames.get(name) == maxEntry) {
+            if (entryOfNames.get(name) == maxEntriesCount) {
 
-                    System.out.println(name);
-                }
+                System.out.println(name);
             }
         }
     }

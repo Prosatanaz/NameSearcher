@@ -11,7 +11,7 @@ public class Names {
 
             String delimiter = " ";
             String[]  subString;
-             subString = string.split(delimiter);
+            subString = string.split(delimiter);
             names.add( subString[1]);
 
         }
