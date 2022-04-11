@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Searcher {
-    public static void findoffenestName(ArrayList<String> names) {
+    public static void findoffenestName(List<String> names) {
         Map<String, Integer> entryOfNames = new HashMap<>();
         for (String name : names) {
 
@@ -10,27 +10,34 @@ public class Searcher {
             } else {
                 entryOfNames.put(name, 1);
             }
-            System.out.println(entryOfNames);
+
         }
         int maxEntry = 0;
-        String result = null;
+
 
         for (Map.Entry<String, Integer> value : entryOfNames.entrySet()) {
+
             if (maxEntry < value.getValue()) {
-                result = value.getKey();
                 maxEntry = value.getValue();
+                Collection<String> offenestName = entryOfNames.keySet();
 
-            }
-            if (value.getValue().equals(maxEntry)) {
-                System.out.println(value.getKey());
-            }
+                for (String key : offenestName){
+                   int entry = entryOfNames.get(key);
 
+                   if (key != null ) {
+
+                       if(entry == maxEntry){
+
+                           System.out.println(key);
+                       }
+                   }
+                }
+                }
+            }
         }
-
-
     }
 
-}
+
 
 
 
