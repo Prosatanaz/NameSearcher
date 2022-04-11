@@ -19,23 +19,22 @@ public class Searcher {
 
             if (maxEntry < value.getValue()) {
                 maxEntry = value.getValue();
-                Collection<String> offenestName = entryOfNames.keySet();
 
-                for (String key : offenestName){
-                   int entry = entryOfNames.get(key);
+            }
+        }
+        for (Map.Entry<String, Integer> value : entryOfNames.entrySet()) {
+            Set<String> frequentNames = entryOfNames.keySet();
 
-                   if (key != null ) {
+            for (String name : frequentNames) {
 
-                       if(entry == maxEntry){
+                if (entryOfNames.get(name) == maxEntry) {
 
-                           System.out.println(key);
-                       }
-                   }
-                }
+                    System.out.println(name);
                 }
             }
         }
     }
+}
 
 
 
